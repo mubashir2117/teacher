@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Teacher's Day</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: -10px;
+    }
+
+    .greeting {
+      font-size: 4vw; /* Use viewport width for scaling text */
+      color: #00f108;
+      font-weight: bold;
+      opacity: 0;
+      transform: scale(0.9);
+      animation: fadeIn 2s forwards, scaleUp 2s forwards;
+    }
+
+    .quote {
+      font-size: 2vw; /* Responsive text size */
+      color: #ffffff;
+      margin-top: 2vh;
+      opacity: 0;
+      animation: fadeInQuote 4s forwards;
+    }
+
+    .btn {
+      margin-top: 3vh;
+      padding: 1rem 2rem;
+      font-size: 1.5vw; /* Adjusting font-size for responsiveness */
+      color: white;
+      background-color: #ff0000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #084e0c;
+    }
+
+    .popup-message {
+      font-size: 3vw; /* Responsive text */
+      color: #fff;
+      margin-top: 5vh;
+      display: none;
+      opacity: 0;
+      animation: fadeInPopup 1s forwards;
+    }
+
+    /* Responsive Balloon container */
+   
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes scaleUp {
+      0% {
+        transform: scale(0.5);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInQuote {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInPopup {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-20px) scale(1.05);
+      }
+
+      100% {
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Media queries for extra responsiveness */
+    @media (max-width: 768px) {
+      .greeting {
+        font-size: 10vw;
+      }
+
+      .quote {
+        font-size: 4vw;
+      }
+
+      .btn {
+        font-size: 3vw;
+      }
+
+      .popup-message {
+        font-size: 5vw;
+      }
+
+      .balloon {
+        width: 20vw;
+        height: 25vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .greeting {
+        font-size: 12vw;
+      }
+
+      .quote {
+        font-size: 5vw;
+      }
+
+      .btn {
+        font-size: 4vw;
+      }
+
+      .popup-message {
+        font-size: 3vw;
+        margin-top: 50px;
+      }
+
+      .balloon {
+        width: 25vw;
+        height: 30vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="greeting">Happy Teacher's Day!</div>
+    <div class="quote">"We are grateful for all your hard work and dedication"</div>
+    <button class="btn" onclick="showMessage()">Click for Special Message</button>
+    
+  </div>
+
+  <h3 class="popup-message" id="popupMessage">
+    <center>You are the best teachers</center> <br>
+    Thank you, Teachers, for lighting the way!
+  </h3>
+
+  <script>
+    window.onload = function () {
+      const greeting = document.querySelector('.greeting');
+      const quote = document.querySelector('.quote');
+
+      setTimeout(() => {
+        greeting.style.opacity = '1';
+        quote.style.opacity = '1';
+      }, 2000);
+    }
+
+    function showMessage() {
+      const popupMessage = document.getElementById('popupMessage');
+      popupMessage.style.display = 'block';
+      setTimeout(() => {
+        popupMessage.style.opacity = '1';
+      }, 100);
+    }
+  </script>
+</body>
+
+</html>
